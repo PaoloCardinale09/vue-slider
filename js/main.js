@@ -49,6 +49,12 @@ const app = Vue.createApp({
     switchToImage(index) {
       this.slides.activeImage = index;
     },
+
+    created() {
+      setInterval(() => {
+        this.nextImage();
+      }, 3000);
+    },
   },
 });
 
