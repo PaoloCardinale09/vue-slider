@@ -55,7 +55,11 @@
             id="slides-container"
           >
             <!-- FOTO GRANDE PRINCIPALE -->
-            <img :src="slides.images[slides.activeImage]" />
+            <img
+              :src="slides.images[slides.activeImage]"
+              @mouseover=" stopInHover() "
+              @mouseleave="restartAutoplay()"
+            />
           </div>
 
           <div

@@ -49,12 +49,23 @@ const app = Vue.createApp({
     switchToImage(index) {
       this.slides.activeImage = index;
     },
+
+    stopInHover() {
+      clearInterval(autoplay);
+      clearInterval(restart);
+    },
+
+    restartAutoplay() {
+      restart = setInterval(() => {
+        this.nextImage();
+      }, 1000);
+    },
   },
 
   created() {
-    setInterval(() => {
+    autoplay = setInterval(() => {
       this.nextImage();
-    }, 3000);
+    }, 1000);
   },
 });
 
