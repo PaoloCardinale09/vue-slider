@@ -24,11 +24,28 @@ const app = Vue.createApp({
           "img/04.webp",
           "img/05.webp",
         ],
+        activeImage: 0,
       },
     };
   },
 
-  methods: {},
+  methods: {
+    prevImage() {
+      if (this.slides.activeImage - 1 < 0) {
+        this.slides.activeImage = this.slides.images.length - 1;
+      } else {
+        this.slides.activeImage--;
+      }
+    },
+
+    nextImage() {
+      if (this.slides.activeImage + 1 >= this.slides.images.length) {
+        this.slides.activeImage = 0;
+      } else {
+        this.slides.activeImage++;
+      }
+    },
+  },
 });
 
 app.mount("#app");
