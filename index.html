@@ -47,120 +47,59 @@
   </head>
 
   <body>
-    <div class="my-carousel-container">
-      <div class="my-carousel">
-        <div
-          class="my-carousel-main"
-          id="slides-container"
-        >
-          <!-- <div class="slide active">
-            <img src="./img/01.webp">
-            <div class="slide-text">
-              <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptatum unde
-                laboriosam
-                molestiae.</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste deserunt doloremque hic eaque
-                culpa
-                aspernatur.</p>
-            </div>
+    <div id="app">
+      <div class="my-carousel-container">
+        <div class="my-carousel">
+          <div
+            class="my-carousel-main"
+            id="slides-container"
+          >
+            <!-- FOTO GRANDE PRINCIPALE -->
+            <img :src="slides.images[0]" />
           </div>
-          <div class="slide">
-            <img src="./img/02.webp">
-            div.te
-            <div class="slide-text">
-              <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptatum unde
-                laboriosam
-                molestiae.</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste deserunt doloremque hic eaque
-                culpa
-                aspernatur.</p>
-            </div>
+
+          <div
+            class="my-carousel-thumbs d-flex"
+            id="thumbs-container"
+          >
+            <!-- IMMAGINI THUMBS, !AGGIUNGERE CLASSE "thumb" -->
+            <img
+              :src="image"
+              v-for="(image, imageIndex) in slides.images"
+              class="thumb"
+            />
           </div>
-          <div class="slide">
-            <img src="./img/03.webp">
-            <div class="slide-text">
-              <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptatum unde
-                laboriosam
-                molestiae.</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste deserunt doloremque hic eaque
-                culpa
-                aspernatur.</p>
-            </div>
-          </div>
-          <div class="slide">
-            <img src="./img/04.webp">
-            <div class="slide-text">
-              <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptatum unde
-                laboriosam
-                molestiae.</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste deserunt doloremque hic eaque
-                culpa
-                aspernatur.</p>
-            </div>
-          </div>
-          <div class="slide">
-            <img src="./img/05.webp">
-            <div class="slide-text">
-              <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptatum unde
-                laboriosam
-                molestiae.</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste deserunt doloremque hic eaque
-                culpa
-                aspernatur.</p>
-            </div>
-          </div> -->
         </div>
 
-        <div
-          class="my-carousel-thumbs"
-          id="thumbs-container"
-        >
-          <!-- <div class="col thumb">
-            <img src="./img/01.webp">
-          </div>
-          <div class="col thumb">
-            <img src="./img/02.webp">
-          </div>
-          <div class="col thumb">
-            <img src="./img/03.webp">
-          </div>
-          <div class="col thumb">
-            <img src="./img/04.webp">
-          </div>
-          <div class="col thumb">
-            <img src="./img/05.webp">
-          </div> -->
+        <div class="my-carousel-controls">
+          <button
+            class="btn btn-outline-dark"
+            id="prev"
+          >
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+
+          <button
+            class="btn btn-outline-dark"
+            id="inverti-autoplay"
+          >
+            <i class="fa-solid fa-repeat"></i>
+          </button>
+
+          <button
+            class="btn btn-outline-dark"
+            id="stop-autoplay"
+          >
+            <i class="fa-solid fa-stop"></i>
+          </button>
+
+          <button
+            class="btn btn-outline-dark"
+            id="next"
+          >
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
         </div>
-      </div>
-
-      <div class="my-carousel-controls">
-        <button
-          class="btn btn-outline-dark"
-          id="prev"
-        >
-          <i class="fa-solid fa-chevron-left"></i>
-        </button>
-
-        <button
-          class="btn btn-outline-dark"
-          id="inverti-autoplay"
-        >
-          <i class="fa-solid fa-repeat"></i>
-        </button>
-
-        <button
-          class="btn btn-outline-dark"
-          id="stop-autoplay"
-        >
-          <i class="fa-solid fa-stop"></i>
-        </button>
-
-        <button
-          class="btn btn-outline-dark"
-          id="next"
-        >
-          <i class="fa-solid fa-chevron-right"></i>
-        </button>
       </div>
     </div>
   </body>
