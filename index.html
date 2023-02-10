@@ -64,9 +64,11 @@
           >
             <!-- IMMAGINI THUMBS -->
             <img
+              class="thumb"
               :src="image"
               v-for="(image, imageIndex) in slides.images"
-              class="thumb"
+              :class="(imageIndex == slides.activeImage) ? 'select' : '' "
+              @click="switchToImage (imageIndex)"
             />
           </div>
         </div>

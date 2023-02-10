@@ -45,106 +45,11 @@ const app = Vue.createApp({
         this.slides.activeImage++;
       }
     },
+
+    switchToImage(index) {
+      this.slides.activeImage = index;
+    },
   },
 });
 
 app.mount("#app");
-
-// // * RECUPERO GLI ELEMENTI HTML
-// const slidesContainerEl = document.getElementById("slides-container");
-// const thumbsContainerEl = document.getElementById("thumbs-container");
-// const prevButton = document.getElementById("prev");
-// const nextButton = document.getElementById("next");
-// const stopAutoplayButton = document.getElementById("stop-autoplay");
-// const invertiAutoplayButton = document.getElementById("inverti-autoplay");
-
-// // * SETTO IL "CONTATORE" DELL'IMMAGINE ATTIVA
-// let activeImage = 0;
-
-// // * GENERO SLIDES E THUMBNAILS
-// slides.forEach((slide, index) => {
-//   slidesContainerEl.innerHTML += `
-//     <div class="slide ${index == activeImage ? "active" : ""}">
-//         <img src="./${slide.image}">
-//         <div class="slide-text">
-//             <h2>${slide.title}</h2>
-//             <p>${slide.text}</p>
-//         </div>
-//     </div>`;
-
-//   thumbsContainerEl.innerHTML += `
-//     <div class="thumb" data-index="${index}">
-//         <img src="./${slide.image}">
-//     </div>
-//     `;
-// });
-
-// // * LEGO IL CLICK DELLE THUMBNAILS AL CAMBIO DELL'IMMAGINE VISUALIZZATA
-// const thumbsEl = document.querySelectorAll(".thumb");
-// thumbsEl.forEach((thumbEl, index) => {
-//   thumbEl.addEventListener("click", function () {
-//     const thisIndex = this.getAttribute("data-index");
-//     switchToSlide(thisIndex);
-//   });
-// });
-
-// // * CREO UNA FUNZIONE PER GESTIRE L'AVANZAMENTO DEL CAROSELLO
-// const onNextClick = () => {
-//   activeImage++;
-
-//   if (activeImage >= slides.length) {
-//     activeImage = 0;
-//   }
-
-//   // console.log(activeImage);
-
-//   switchToSlide(activeImage);
-// };
-
-// // * CREO UNA FUNZIONE PER GESTIRE L'ARRETRAMENTO DEL CAROSELLO
-// const onPrevClick = () => {
-//   activeImage--;
-
-//   if (activeImage < 0) {
-//     activeImage = slides.length - 1;
-//   }
-
-//   // console.log(activeImage);
-
-//   switchToSlide(activeImage);
-// };
-
-// // * CREO UNA FUNZIONE PER CAMBIARE L'IMMAGINE VISUALIZZATA
-// const switchToSlide = (activeIndex) => {
-//   const activeSlide = document.querySelector(".slide.active");
-//   const allSlides = document.querySelectorAll(".slide");
-
-//   activeSlide.classList.remove("active");
-//   allSlides[activeIndex].classList.add("active");
-// };
-
-// // * LEGO IL CLICK DEI CONTROLLI ALLE FUNZIONI DI AVANZAMENTO E ARRETRAMENTO
-// nextButton.addEventListener("click", onNextClick);
-// prevButton.addEventListener("click", onPrevClick);
-
-// // * AUTOPLAY
-// let autoplayForward = true;
-
-// const autoplay = setInterval(() => {
-//   if (autoplayForward) {
-//     onNextClick();
-//   } else {
-//     onPrevClick();
-//   }
-// }, 3000);
-
-// // * STOP AUTOPLAY
-// stopAutoplayButton.addEventListener("click", () => {
-//   clearInterval(autoplay);
-// });
-
-// // * INVERTI AUTOPLAY
-
-// invertiAutoplayButton.addEventListener("click", () => {
-//   autoplayForward = !autoplayForward;
-// });

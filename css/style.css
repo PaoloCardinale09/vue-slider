@@ -88,3 +88,8 @@ img {
   border: 10px solid white;
   cursor: pointer;
 }
+
+.select {
+  outline: 0.4rem solid #03a8f5;
+  outline-offset: -0.4rem;
+}
