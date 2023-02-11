@@ -25,6 +25,7 @@ const app = Vue.createApp({
           "img/05.webp",
         ],
         activeImage: 0,
+        autoPlayForward: true,
       },
     };
   },
@@ -57,14 +58,26 @@ const app = Vue.createApp({
 
     restartAutoplay() {
       restart = setInterval(() => {
-        this.nextImage();
+        if (this.slides.autoPlayForward == true) {
+          this.nextImage();
+        } else {
+          this.prevImage();
+        }
       }, 1000);
+    },
+
+    invertImage() {
+      this.slides.autoPlayForward = !this.slides.autoPlayForward;
     },
   },
 
   created() {
     autoplay = setInterval(() => {
-      this.nextImage();
+      if (this.slides.autoPlayForward == true) {
+        this.nextImage();
+      } else {
+        this.prevImage();
+      }
     }, 1000);
   },
 });
